@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: weather-app
+  template:
+    metadata:
+      labels:
+        app: weather-app
+    spec:
+      containers:
+      - name: weather-app
+        image: your-registry/weather-app:latest  # замените на ваш образ
+        ports:
+        - containerPort: 8000
+        env:
+        - name: WEATHER_API_KEY
+          value: "ваш_ключ_openweathermap!  # или используйте Secret
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+
