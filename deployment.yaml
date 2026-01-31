@@ -19,7 +19,7 @@ spec:
         - containerPort: 8000
         env:
         - name: WEATHER_API_KEY
-          value: "ваш_ключ_openweathermap!  # или используйте Secret
+          value: 6aeb705d7f9701500a924dd42e320595
         resources:
           requests:
             memory: "128Mi"
