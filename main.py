@@ -8,7 +8,7 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Ключ API OpenWeatherMap (замените на свой)
-API_KEY = os.getenv("WEATHER_API_KEY", "ваш_ключ_openweathermap")
+API_KEY = os.getenv("WEATHER_API_KEY", "6aeb705d7f9701500a924dd42e320595")
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
 
 @app.get("/", response_class=HTMLResponse)
